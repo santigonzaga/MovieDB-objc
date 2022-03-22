@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "WebService.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource>
 
 @property (strong, nonatomic) WebService *webService;
 @property (strong, nonatomic) NSDictionary *nowPlayingMovies;
