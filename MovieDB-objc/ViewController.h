@@ -6,9 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebService.h"
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) WebService *webService;
+@property (strong, nonatomic) NSDictionary *nowPlayingMovies;
+@property (strong, nonatomic) NSDictionary *popularMovies;
+
+- (void) fetchPopularMovies;
+- (void) fetchNowPlayingMovies;
 
 @end
 

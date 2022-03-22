@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D65626127EA36CF002C6550 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D65626027EA36CF002C6550 /* WebService.m */; };
 		DE9FDE1B27E8F79100C025AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9FDE1A27E8F79100C025AE /* AppDelegate.m */; };
 		DE9FDE1E27E8F79100C025AE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9FDE1D27E8F79100C025AE /* SceneDelegate.m */; };
 		DE9FDE2127E8F79100C025AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9FDE2027E8F79100C025AE /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D65626027EA36CF002C6550 /* WebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
+		6D65626227EA37B3002C6550 /* WebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
 		DE9FDE1627E8F79100C025AE /* MovieDB-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieDB-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9FDE1927E8F79100C025AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE9FDE1A27E8F79100C025AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				DE9FDE2727E8F79600C025AE /* LaunchScreen.storyboard */,
 				DE9FDE2A27E8F79600C025AE /* Info.plist */,
 				DE9FDE2B27E8F79600C025AE /* main.m */,
+				6D65626027EA36CF002C6550 /* WebService.m */,
+				6D65626227EA37B3002C6550 /* WebService.h */,
 			);
 			path = "MovieDB-objc";
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			files = (
 				DE9FDE2127E8F79100C025AE /* ViewController.m in Sources */,
 				DE9FDE1B27E8F79100C025AE /* AppDelegate.m in Sources */,
+				6D65626127EA36CF002C6550 /* WebService.m in Sources */,
 				DE9FDE2C27E8F79600C025AE /* main.m in Sources */,
 				DE9FDE1E27E8F79100C025AE /* SceneDelegate.m in Sources */,
 			);
