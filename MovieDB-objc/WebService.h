@@ -11,6 +11,6 @@
 @interface WebService: NSObject
 
 typedef void (^COMPLETION_BLOCK)(NSDictionary *json, NSError *error);
-+  (void)get:(NSString *)path completionBlock: (COMPLETION_BLOCK) completion;
+- (void)get:(NSString *)path completionBlock: (COMPLETION_BLOCK) completion;
 
 @end

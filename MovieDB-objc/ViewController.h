@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieTableViewCell.h"
 #import "WebService.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource>

@@ -24,7 +24,7 @@
 }
 
 - (void) fetchPopularMovies {
-    [WebService get: @"https://api.themoviedb.org/3/movie/popular?api_key=e93b8bbdf3d35298717bb67103decfaa" completionBlock: ^(NSDictionary *json, NSError *error){
+    [_webService get: @"https://api.themoviedb.org/3/movie/popular?api_key=e93b8bbdf3d35298717bb67103decfaa" completionBlock: ^(NSDictionary *json, NSError *error){
         if (error == NULL) {
             self.popularMovies = json;
             [[self moviesTableView] reloadData];
@@ -33,7 +33,7 @@
 }
 
 - (void) fetchNowPlayingMovies {
-    [WebService get: @"https://api.themoviedb.org/3/movie/now_playing?api_key=e93b8bbdf3d35298717bb67103decfaa" completionBlock: ^(NSDictionary *json, NSError *error){
+    [_webService get: @"https://api.themoviedb.org/3/movie/now_playing?api_key=e93b8bbdf3d35298717bb67103decfaa" completionBlock: ^(NSDictionary *json, NSError *error){
         if (error == NULL) {
             self.nowPlayingMovies = json;
             [[self moviesTableView] reloadData];
@@ -42,7 +42,23 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return [UITableViewCell new];
+    MovieTableViewCell *cell = (MovieTableViewCell *)[tableView dequeueReusableCellWithIdentifier: @"movieCell"];
+    
+    NSArray *movies;
+    
+    if ([indexPath section] == 0) {
+        movies = [_nowPlayingMovies objectForKey: @"results"];
+    } else {
+        movies = [_popularMovies objectForKey: @"results"];
+    }
+    
+    NSDictionary *movie = [movies objectAtIndex:indexPath.row];
+    NSLog(@"%@", movie);
+    NSLog(@"%@", [movie objectForKey: @"\"vote_average\""]);
+
+    [cell configureWithTitle: [movie objectForKey:@"title"] description:[movie objectForKey: @"overview"] rating: [movie objectForKey: @"\"vote_average\""] path: [movie objectForKey:@"\"poster_path\""]];
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

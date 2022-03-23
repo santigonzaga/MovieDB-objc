@@ -14,7 +14,7 @@
 
 @implementation WebService: NSObject
 
-+ (void)get:(NSString *)path completionBlock: (COMPLETION_BLOCK) completion {
+- (void)get:(NSString *)path completionBlock: (COMPLETION_BLOCK) completion {
     NSURL *url = [NSURL URLWithString:path];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     NSURLSessionDataTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
