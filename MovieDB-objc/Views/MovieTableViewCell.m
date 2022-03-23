@@ -6,7 +6,6 @@
 //
 
 #import "MovieTableViewCell.h"
-#import <Kingfisher/Kingfisher-Swift.h>
 
 @implementation MovieTableViewCell
 
@@ -18,8 +17,7 @@
     _ratingLabel.text = NULL;
 }
 
-- (void) configureWithTitle: (NSString*)title description: (NSString*) description rating: (NSString*) rating path: (NSString *) path {
-    NSLog(@"%@", path);
+- (void) configureWithTitle: (NSString*)title overview: (NSString*) overview rating: (NSNumber*) rating path: (NSString *) path {
     _posterImageView.image = [[UIImage alloc] initWithContentsOfFile: @"imagem"];
     
     if (title != nil) {
@@ -28,17 +26,21 @@
         _titleLabel.text = @"No title available";
     }
     
-    if (description != nil) {
-        _descriptionLabel.text = description;
+    if (overview != nil) {
+        _descriptionLabel.text = overview;
     } else {
         _descriptionLabel.text = @"No description available";
     }
     
     if (rating != nil) {
-        _ratingLabel.text = rating;
+        _ratingLabel.text = [NSString stringWithFormat: @"%@", rating];
     } else {
         _ratingLabel.text = @"No rating available";
     }
+    
+//    if (path != nil) {
+//        _posterImageView
+//    }
 }
 
 @end

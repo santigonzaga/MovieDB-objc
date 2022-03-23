@@ -56,7 +56,7 @@
     NSLog(@"%@", movie);
     NSLog(@"%@", [movie objectForKey: @"\"vote_average\""]);
 
-    [cell configureWithTitle: [movie objectForKey:@"title"] description:[movie objectForKey: @"overview"] rating: [movie objectForKey: @"\"vote_average\""] path: [movie objectForKey:@"\"poster_path\""]];
+    [cell configureWithTitle: [movie objectForKey:@"title"] overview:[movie objectForKey: @"overview"] rating: [movie objectForKey: @"vote_average"] path: [movie objectForKey:@"poster_path"]];
     
     return cell;
 }

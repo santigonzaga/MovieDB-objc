@@ -83,24 +83,40 @@
 		DE9FDE1827E8F79100C025AE /* MovieDB-objc */ = {
 			isa = PBXGroup;
 			children = (
+				DE9FDE3327EB90D500C025AE /* Views */,
+				DE9FDE3227EB90BF00C025AE /* Services */,
 				DE9FDE1927E8F79100C025AE /* AppDelegate.h */,
 				DE9FDE1A27E8F79100C025AE /* AppDelegate.m */,
 				DE9FDE1C27E8F79100C025AE /* SceneDelegate.h */,
 				DE9FDE1D27E8F79100C025AE /* SceneDelegate.m */,
-				DE9FDE1F27E8F79100C025AE /* ViewController.h */,
-				DE9FDE2027E8F79100C025AE /* ViewController.m */,
-				DE9FDE2227E8F79100C025AE /* Main.storyboard */,
 				DE9FDE2527E8F79600C025AE /* Assets.xcassets */,
 				DE9FDE2727E8F79600C025AE /* LaunchScreen.storyboard */,
 				DE9FDE2A27E8F79600C025AE /* Info.plist */,
+				6D209A0A27EB7CE4002AFCB1 /* MovieDB-objc-Bridging-Header.h */,
+			);
+			path = "MovieDB-objc";
+			sourceTree = "<group>";
+		};
+		DE9FDE3227EB90BF00C025AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
 				6D65626027EA36CF002C6550 /* WebService.m */,
 				6D65626227EA37B3002C6550 /* WebService.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE9FDE3327EB90D500C025AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE9FDE1F27E8F79100C025AE /* ViewController.h */,
+				DE9FDE2027E8F79100C025AE /* ViewController.m */,
 				DE9FDE2B27E8F79600C025AE /* main.m */,
-				6D209A0A27EB7CE4002AFCB1 /* MovieDB-objc-Bridging-Header.h */,
+				DE9FDE2227E8F79100C025AE /* Main.storyboard */,
 				6D2FEC0A27EB821E0026FF62 /* MovieTableViewCell.h */,
 				6D2FEC0B27EB821E0026FF62 /* MovieTableViewCell.m */,
 			);
-			path = "MovieDB-objc";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F029379853D3CA1A2BB40DB3 /* Pods */ = {
@@ -109,7 +125,6 @@
 				37CC3BE7321836D85508CCFD /* Pods-MovieDB-objc.debug.xcconfig */,
 				756D68B642FDDF659A66CCB1 /* Pods-MovieDB-objc.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Kingfisher/Kingfisher-Swift.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 
-- (void) configureWithTitle: (NSString*)title description: (NSString*) description rating: (NSNumber*) rating path: (NSString *) path;
+- (void) configureWithTitle: (NSString*)title overview: (NSString*) overview rating: (NSNumber*) rating path: (NSString *) path;
 
 @end
 
