@@ -6,6 +6,7 @@
 //
 
 #import "MovieTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MovieTableViewCell
 
@@ -18,7 +19,9 @@
 }
 
 - (void) configureWithTitle: (NSString*)title overview: (NSString*) overview rating: (NSNumber*) rating path: (NSString *) path {
-    _posterImageView.image = [[UIImage alloc] initWithContentsOfFile: @"imagem"];
+    NSString *completePath = @"https://image.tmdb.org/t/p/w500";
+    completePath = [completePath stringByAppendingString: path];
+    [_posterImageView sd_setImageWithURL:[NSURL URLWithString: completePath]];
     
     if (title != nil) {
         _titleLabel.text = title;

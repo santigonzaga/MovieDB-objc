@@ -8,8 +8,9 @@
 #import <UIKit/UIKit.h>
 #import "MovieTableViewCell.h"
 #import "WebService.h"
+#import "MovieDetailsViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) WebService *webService;
 @property (strong, nonatomic) NSDictionary *nowPlayingMovies;

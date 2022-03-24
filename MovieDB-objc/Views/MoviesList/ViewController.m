@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _moviesTableView.dataSource = self;
+    _moviesTableView.delegate = self;
+    self.title = @"Movies";
     self.webService = [WebService new];
     [self fetchNowPlayingMovies];
     [self fetchPopularMovies];
@@ -53,9 +55,7 @@
     }
     
     NSDictionary *movie = [movies objectAtIndex:indexPath.row];
-    NSLog(@"%@", movie);
-    NSLog(@"%@", [movie objectForKey: @"\"vote_average\""]);
-
+    
     [cell configureWithTitle: [movie objectForKey:@"title"] overview:[movie objectForKey: @"overview"] rating: [movie objectForKey: @"vote_average"] path: [movie objectForKey:@"poster_path"]];
     
     return cell;
@@ -77,6 +77,30 @@
         return @"Now Playing";
     }
     return @"Popular movies";
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *movies;
+    
+    if ([indexPath section] == 0) {
+        movies = [_nowPlayingMovies objectForKey: @"results"];
+    } else {
+        movies = [_popularMovies objectForKey: @"results"];
+    }
+    
+    NSDictionary *movie = [movies objectAtIndex:indexPath.row];
+    
+    [self  performSegueWithIdentifier: @"toDetails" sender: movie];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"toDetails"]) {
+        MovieDetailsViewController *vc = [segue destinationViewController];
+        
+        NSDictionary *movie = (NSDictionary *) sender;
+            
+        vc.movie = movie;
+    }
 }
 
 

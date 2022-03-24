@@ -6,5 +6,5 @@ target 'MovieDB-objc' do
   use_frameworks!
 
    pod 'Kingfisher', '~> 7.0'
-
+   pod 'SDWebImage', '~> 5.0'
 end
